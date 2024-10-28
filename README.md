@@ -20,7 +20,7 @@ The SQL Code within this repository was used to create a schema using LEGO Data 
 
 ### Schema Setup
 
-ER Diagram: ![ER Diagram ]("C:\Users\AlexWood\Downloads\TIL_PORTFOLIO_PROJECTS - TIL_PORTFOLIO_PROJECTS - WOODY_SCHEMA.png")
+ER Diagram:
 
 
 ### Analysis
