@@ -28,3 +28,7 @@ ER Diagram:
 ### Analysis
 
 ## Learnings 🧠
+````sql
+CREATE OR REPLACE SCHEMA TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA;
+````
+
