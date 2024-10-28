@@ -1,14 +1,14 @@
 CREATE SCHEMA TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA
 
 ---------------------------------------------------------------------------------------------------------------
-// This section is used to check how long the fields need to be that we are adding into the Woody Schema
+-- This section is used to check how long the fields need to be that we are adding into the Woody Schema
 SELECT MAX(LENGTH(name))
     ,MAX(LENGTH(RGB))
     ,MAX(LENGTH(IS_TRANS))
     
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_COLORS;
 ---------------------------------------------------------------------------------------------------------------
-// This section adds the Lego Colors table to the Woody Schema
+-- This section adds the Lego Colors table to the Woody Schema
 
 create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_COLORS (
 	ID NUMBER(38,0),
@@ -17,12 +17,12 @@ create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_COLORS (
 	IS_TRANS VARCHAR(1)
 );
 ---------------------------------------------------------------------------------------------------------------
-// Checking Length of LEGO_INVENTORIES table
+-- Checking Length of LEGO_INVENTORIES table
 SELECT MAX(LENGTH(SET_NUM))
 
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_INVENTORIES;
 ---------------------------------------------------------------------------------------------------------------
-// This section adds the Lego Inventories table to the Woody Schema
+-- This section adds the Lego Inventories table to the Woody Schema
 
 create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_INVENTORIES (
 	ID NUMBER(38,0),
@@ -30,13 +30,13 @@ create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_INVENTORIES (
 	SET_NUM VARCHAR(16)
 );
 ---------------------------------------------------------------------------------------------------------------
-// Checking Length of LEGO_INVENTORIES table
+-- Checking Length of LEGO_INVENTORIES table
 SELECT MAX(LENGTH(PART_NUM))
     ,MAX(LENGTH(IS_Spare))
 
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_INVENTORY_PARTS;
 ---------------------------------------------------------------------------------------------------------------
-// This section adds the Lego INVENTORY_PARTS table to the Woody Schema
+-- This section adds the Lego INVENTORY_PARTS table to the Woody Schema
 
 create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_INVENTORY_PARTS (
 	INVENTORY_ID NUMBER(38,0),
@@ -46,12 +46,12 @@ create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_INVENTORY_PARTS
 	IS_SPARE VARCHAR(1)
 );
 ---------------------------------------------------------------------------------------------------------------
-// CHECKING LENGTH OF LEGO_INVENTORY_SETS TABLE
+-- CHECKING LENGTH OF LEGO_INVENTORY_SETS TABLE
 SELECT MAX(LENGTH(SET_NUM))
 
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_INVENTORY_SETS;
 ---------------------------------------------------------------------------------------------------------------
-// ADDING INVENTORY_SETS TABLE
+-- ADDING INVENTORY_SETS TABLE
 
 create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_INVENTORY_SETS (
 	INVENTORY_ID NUMBER(38,0),
@@ -59,13 +59,13 @@ create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_INVENTORY_SETS 
 	QUANTITY NUMBER(38,0)
 );
 ---------------------------------------------------------------------------------------------------------------
-// CHECKING THE LENGTH OF LEGO_PARTS TABLE
+-- CHECKING THE LENGTH OF LEGO_PARTS TABLE
 SELECT MAX(LENGTH(PART_NUM))
     ,MAX(LENGTH(NAME))
 
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_PARTS;
 ---------------------------------------------------------------------------------------------------------------
-// ADDING LEGO_PARTS TABLE
+-- ADDING LEGO_PARTS TABLE
 
 create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_PARTS (
 	PART_NUM VARCHAR(15),
@@ -73,25 +73,25 @@ create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_PARTS (
 	PART_CAT_ID NUMBER(38,0)
 );
 ---------------------------------------------------------------------------------------------------------------
-// CHECKING LENGTH OF LEGO_PARTS_CATEGORIES TABLE
+-- CHECKING LENGTH OF LEGO_PARTS_CATEGORIES TABLE
 SELECT MAX(LENGTH(NAME))
 
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_PART_CATEGORIES;
 ---------------------------------------------------------------------------------------------------------------
-// ADDING LEGO_PARTS_CATEGORIES TABLE
+-- ADDING LEGO_PARTS_CATEGORIES TABLE
 
 create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_PART_CATEGORIES (
 	ID NUMBER(38,0),
 	NAME VARCHAR(44)
 );
 ---------------------------------------------------------------------------------------------------------------
-// CHECKING LENGTH OF LEGO_SETS TABLE
+-- CHECKING LENGTH OF LEGO_SETS TABLE
 SELECT MAX(LENGTH(SET_NUM))
     ,MAX(LENGTH(NAME))
 
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_SETS;
 ---------------------------------------------------------------------------------------------------------------
-// ADDING LEGO_SETS TABLE
+-- ADDING LEGO_SETS TABLE
 
 create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_SETS (
 	SET_NUM VARCHAR(16),
@@ -101,12 +101,12 @@ create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_SETS (
 	NUM_PARTS NUMBER(38,0)
 );
 ---------------------------------------------------------------------------------------------------------------
-// CHECKING LENGTH OF LEGO_THEMES TABLE
+-- CHECKING LENGTH OF LEGO_THEMES TABLE
 SELECT MAX(LENGTH(NAME))
 
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_SETS;
 ---------------------------------------------------------------------------------------------------------------
-// ADDING LEGO_THEMES TABLE
+-- ADDING LEGO_THEMES TABLE
 
 create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_THEMES (
 	ID NUMBER(38,0),
@@ -116,63 +116,63 @@ create or replace TABLE TIL_PORTFOLIO_PROJECTS.WOODY_SCHEMA.LEGO_THEMES (
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// THE STEPS ABOVE ARE CHECKING THE LENGTHS OF THE FIELDS OF THE TABLES WE ARE ADDING TO THE SCHEMA AND THEN THEY ARE ADDING THE TABLES TO WOODYS SCHEMA.
+-- THE STEPS ABOVE ARE CHECKING THE LENGTHS OF THE FIELDS OF THE TABLES WE ARE ADDING TO THE SCHEMA AND THEN THEY ARE ADDING THE TABLES TO WOODYS SCHEMA.
 
-// NOW WE MUST ADD DATA TO THESE FIELDS
+-- NOW WE MUST ADD DATA TO THESE FIELDS
 
-// LEGO_COLOUR
+-- LEGO_COLOUR
 
 INSERT INTO WOODY_SCHEMA.LEGO_COLORS
 SELECT *
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_COLORS;
 
-// LEGO_INVENTORIES
+-- LEGO_INVENTORIES
 
 INSERT INTO WOODY_SCHEMA.LEGO_INVENTORIES
 SELECT *
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_INVENTORIES;
 
-// LEGO_INVENTORY_PARTS
+-- LEGO_INVENTORY_PARTS
 
 INSERT INTO WOODY_SCHEMA.LEGO_INVENTORY_PARTS
 SELECT *
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_INVENTORY_PARTS;
 
-// LEGO_INVENTORY_SETS
+-- LEGO_INVENTORY_SETS
 
 INSERT INTO WOODY_SCHEMA.LEGO_INVENTORY_SETS
 SELECT *
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_INVENTORY_SETS;
 
-// LEGO_PARTS
+-- LEGO_PARTS
 
 INSERT INTO WOODY_SCHEMA.LEGO_PARTS
 SELECT *
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_PARTS;
 
-// LEGO_PART_CATEGORIES
+-- LEGO_PART_CATEGORIES
 
 INSERT INTO WOODY_SCHEMA.LEGO_PART_CATEGORIES
 SELECT *
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_PART_CATEGORIES;
 
-// LEGO_SETS
+-- LEGO_SETS
 
 INSERT INTO WOODY_SCHEMA.LEGO_SETS
 SELECT *
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_SETS;
 
-// LEGO_THEMES
+-- LEGO_THEMES
 
 INSERT INTO WOODY_SCHEMA.LEGO_THEMES
 SELECT *
 FROM TIL_PORTFOLIO_PROJECTS.STAGING.LEGO_THEMES;
 
-// DONE, ALL TABLES NOW HAVE DATA INSERTTED INTO THEM
+-- DONE, ALL TABLES NOW HAVE DATA INSERTTED INTO THEM
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-// NOW WE NEED TO SET THE PRIMARY AND FOREIGN KEYS IN THE TABLES
+-- NOW WE NEED TO SET THE PRIMARY AND FOREIGN KEYS IN THE TABLES
 
 -- Setting Primary Keys
 ALTER TABLE LEGO_COLORS ADD PRIMARY KEY (ID);
