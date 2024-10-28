@@ -1,7 +1,7 @@
-# SQL-LEGO-Schema-Creation-Project
+# SQL-LEGO-Schema-Creation-Project 🧱
 The SQL Code within this repository was used to create a schema using LEGO Data in Snowflake.
 
-## Tasks
+## Tasks 📃
 - Schema setup
   - create schema
   - create tables
@@ -9,14 +9,14 @@ The SQL Code within this repository was used to create a schema using LEGO Data 
   - set primary and foreign key
   - create ER diagram
 
-- Analysis
+- Analysis 
   - find unique parts
   - analyse sets
   - create view
   - download data
   - Visualise data
 
-## Outcomes
+## Outcomes 🕵️‍♂️
 
 ### Schema Setup
 
@@ -26,3 +26,5 @@ ER Diagram:
 
 
 ### Analysis
+
+## Learnings 🧠
