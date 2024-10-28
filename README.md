@@ -15,3 +15,11 @@ The SQL Code within this repository was used to create a schema using LEGO Data 
   - create view
   - download data
   - Visualise data
+
+## Outcomes
+
+### Schema Setup
+
+ER Diagram: 
+
+### Analysis
