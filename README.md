@@ -3,4 +3,13 @@ The SQL Code within this repository was used to create a schema using LEGO Data 
 
 ## Tasks
 • Schema setup
-    - 
+    • Create schema
+    • create tables
+    • insert data
+    • Set primary and foreign keys
+
+• Analysis
+    • find unique parts
+    • analyse sets
+    • create view
+    • download data
