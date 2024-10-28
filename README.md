@@ -21,6 +21,8 @@ The SQL Code within this repository was used to create a schema using LEGO Data 
 ### Schema Setup
 
 ER Diagram:
+![TIL_PORTFOLIO_PROJECTS - TIL_PORTFOLIO_PROJECTS - WOODY_SCHEMA](https://github.com/user-attachments/assets/1d31791f-f524-4324-8fae-e159234c2289)
+
 
 
 ### Analysis
